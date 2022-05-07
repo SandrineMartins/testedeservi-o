@@ -15,10 +15,9 @@ public class countriesQueryTest {
     @Test
     public void shouldReturnStatus200AndRequiredFields(){
         Response response = postContinents(body, Constants.BASE_URL);
-        String value = RequestBase.getValueFromResponse(response, "data.continents[0].code");
         response.
                 then().
-                assertThat().statusCode(200).body("data.continents[0].code", equalTo(value));
+                assertThat().statusCode(200).body("data.continents[0].code", equalTo("AF"));
     }
 
     @Test
